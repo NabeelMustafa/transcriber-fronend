@@ -65,7 +65,7 @@ class CreateTranscript extends React.Component<IProps, IState> {
           <form className="dropForm" onSubmit={this.handleSubmit}>
             <fieldset disabled={this.state.submitButtonPressed === true}>
               <label className="org-label">
-                Språk
+                Language
                 <select value={this.state.languageCodes[0]} onChange={event => this.handleLanguageChange(0, event)}>
                   {this.availableLanguages()}
                 </select>
@@ -82,78 +82,78 @@ class CreateTranscript extends React.Component<IProps, IState> {
               <label className="org-label">
                 Type
                 <select value={this.state.interactionType} onChange={this.handleInteractionTypeChange}>
-                  <option value={InteractionType.Unspecified}>Ukjent eller annen type</option>
-                  <option value={InteractionType.Discussion}>Diskusjon - Flere personer i samtale eller diskusjon, for eksempel i møte med to eller flere aktive deltakere</option>
-                  <option value={InteractionType.Presentaton}>Presentasjon - En eller flere personer foreleser eller presenterer til andre, stort sett uten avbrudd</option>
-                  <option value={InteractionType.PhoneCall}>Telefon- eller videokonferansesamtale - To eller flere personer, som ikke er i samme rom, deltar aktivt i samtale.</option>
-                  <option value={InteractionType.Voicemail}>Talepostmelding/mobilsvar - Opptak som er ment for en annen person å lytte til.</option>
-                  <option value={InteractionType.ProfessionallyProduced}>Profesjonelt produsert - Eksempelvis TV-show, podkast</option>
-                  <option value={InteractionType.Dictation}>Diksjon - Opplesning av dokumenter som tekstmeldinger, e-post eller rapporter.</option>
+                  <option value={InteractionType.Unspecified}>Unknown or other type</option>
+                  <option value={InteractionType.Discussion}>Discussion - Multiple people in conversation or discussion, for example in meeting with two or more active participants</option>
+                  <option value={InteractionType.Presentaton}>Presentation - One or more people lecture or present to others, mostly without interruption</option>
+                  <option value={InteractionType.PhoneCall}>Telephone or video conference call - Two or more people who are not in the same room actively participate in conversation.</option>
+                  <option value={InteractionType.Voicemail}>Voicemail / Voicemail - Recordings intended for another person to listen to.</option>
+                  <option value={InteractionType.ProfessionallyProduced}>Professionally produced - For example TV show, podcast.</option>
+                  <option value={InteractionType.Dictation}>Diction - Reading documents such as text messages, emails or reports.</option>
                 </select>
               </label>
 
               <label className="org-label">
-                NAICS-kode
+              NAICS Code
                 <small>
-                  Den 6-sifrede <a href="https://www.naics.com/search/">NAICS-koden</a> som ligger tettest opptil emnene det snakkes om i lydfilen.
+                The 6-digit <a href="https://www.naics.com/search/">NAICS Code</a> which is closest to the topics discussed in the audio file.
                 </small>
                 <input value={this.state.industryNaicsCodeOfAudio} type="text" onChange={this.handleIndustryNaicsCodeOfAudioChange} />
               </label>
 
               <label className="org-label">
-                Mikrofonavstand
+              Microphone Distance
                 <select value={this.state.microphoneDistance} onChange={this.handleMicrophoneDistanceChange}>
-                  <option value={MicrophoneDistance.Unspecified}>Ukjent</option>
-                  <option value={MicrophoneDistance.Nearfield}>Mindre enn 1 meter</option>
-                  <option value={MicrophoneDistance.Midfield}>Mindre enn 3 meter</option>
-                  <option value={MicrophoneDistance.Farfield}>Mer enn 3 meter</option>
+                  <option value={MicrophoneDistance.Unspecified}>Unknown</option>
+                  <option value={MicrophoneDistance.Nearfield}>Less then 1 meter</option>
+                  <option value={MicrophoneDistance.Midfield}>Less then 3 meter</option>
+                  <option value={MicrophoneDistance.Farfield}>More then 3 meter</option>
                 </select>
               </label>
               <label className="org-label">
-                Opprinnelig mediatype
+                Original media type
                 <select value={this.state.originalMediaType} onChange={this.handleOriginalMediaTypeChange}>
-                  <option value={OriginalMediaType.Unspecified}>Ukjent</option>
-                  <option value={OriginalMediaType.Audio}>Audio - Lydopptak</option>
-                  <option value={OriginalMediaType.Video}>Video - Lyden kommer opprinnelig fra et video-opptak </option>
+                  <option value={OriginalMediaType.Unspecified}>Unkown</option>
+                  <option value={OriginalMediaType.Audio}>Audio - Sound recordings</option>
+                  <option value={OriginalMediaType.Video}>Video - The audio originally comes from a video recording </option>
                 </select>
               </label>
               <label className="org-label">
-                Hvor eller hvordan ble opptaket gjort?
+              Where or how was the recording done?
                 <select value={this.state.recordingDeviceType} onChange={this.handleRecordingDeviceTypeChange}>
-                  <option value={RecordingDeviceType.Unspecified}>Ukjent</option>
-                  <option value={RecordingDeviceType.Smartphone}>Smarttelefon - Opptaket ble gjort på en smarttelefon</option>
-                  <option value={RecordingDeviceType.PC}>PC - Opptaket ble gjort med en PC eller tablet</option>
-                  <option value={RecordingDeviceType.PhoneLine}>Telefonlinje - Opptaket ble gjort over en telefonlinje</option>
-                  <option value={RecordingDeviceType.Vehicle}>Kjøretøy - Opptaket ble gjort i et kjøretøy</option>
-                  <option value={RecordingDeviceType.OtherOutdoorDevice}>Utendørs - Opptaket ble gjort utendørs</option>
-                  <option value={RecordingDeviceType.OtherIndoorDevice}>Innendørs - Opptaket ble gjort innendørs</option>
+                  <option value={RecordingDeviceType.Unspecified}>Unkown</option>
+                  <option value={RecordingDeviceType.Smartphone}>Smartphone - The recording was done on a smartphone</option>
+                  <option value={RecordingDeviceType.PC}>PC - The recording was done with a PC or tablet</option>
+                  <option value={RecordingDeviceType.PhoneLine}>Telephone line - The recording was made over a telephone line</option>
+                  <option value={RecordingDeviceType.Vehicle}>Vehicle - The recording was done in a vehicle</option>
+                  <option value={RecordingDeviceType.OtherOutdoorDevice}>Outdoor - The recording was done outdoors</option>
+                  <option value={RecordingDeviceType.OtherIndoorDevice}>Indoors - The recording was done indoors</option>
                 </select>
               </label>
 
               <label className="org-label">
-                Navn på opptaksutstyr
-                <small>Eksempel: iPhone X, Polycom SoundStation IP 6000, POTS, VOIP eller Cardioid Microphone</small>
+              Name of recording equipment
+                <small>Example: iPhone X, Polycom SoundStation IP 6000, POTS, VOIP or Cardioid Microphone</small>
                 <input value={this.state.recordingDeviceName} type="text" onChange={this.handleRecordingDeviceNameChange} />
               </label>
 
               <label className="org-label">
-                Emne
-                <small>Hva handler lydfilen om?</small>
+                Subject
+                <small>What is the audio file about?</small>
                 <textarea value={this.state.audioTopic} onChange={this.handleAudioTopicChange} />
               </label>
 
               <label className="org-label">
-                Kontekst
-                <small>Gi "hint" til talegjenkjenningen for å favorisere bestemte ord og uttrykk i resultatene, i form av en kommaseparert liste.</small>
+                Context
+                <small>Provide "hints" to speech recognition to favor specific words and phrases in the results, in the form of a comma-separated list.</small>
                 <textarea value={this.state.speechContextsPhrases} onChange={this.handleSpeechContextChange} />
               </label>
 
               <button className="org-btn org-btn--primary" disabled={this.submitButtonIsDisabled()} type="submit">
                 {(() => {
                   if (this.state.submitButtonPressed === true && this.state.fileUploaded === false && this.state.percent !== undefined) {
-                    return `Laster opp ${this.state.percent}%`
+                    return `Uploading${this.state.percent}%`
                   } else {
-                    return "Last opp"
+                    return "Upload"
                   }
                 })()}
               </button>
@@ -359,132 +359,132 @@ class CreateTranscript extends React.Component<IProps, IState> {
 
   private availableLanguages() {
     const languages = new Map([
-      ["nb-NO", "Norsk"],
-      ["sv-SE", "Svensk"],
-      ["da-DK", "Dansk"],
-      ["en-GB", "Engelsk (Storbritannia)"],
-      ["en-US", "Engelsk (USA)"],
-      ["", "---"],
-      ["af-ZA", "Afrikaans"],
-      ["am-ET", "Amharisk"],
-      ["ar-DZ", "Arabisk (Algerie)"],
-      ["ar-BH", "Arabisk (Bahrain)"],
-      ["ar-EG", "Arabisk (Egypt)"],
-      ["ar-AE", "Arabisk (De forente arabiske emirater)"],
-      ["ar-IQ", "Arabisk (Irak)"],
-      ["ar-IL", "Arabisk (Israel)"],
-      ["ar-JO", "Arabisk (Jordan)"],
-      ["ar-KW", "Arabisk (Kuwait)"],
-      ["ar-LB", "Arabisk (Libanon)"],
-      ["ar-MA", "Arabisk (Marokko)"],
-      ["ar-OM", "Arabisk (Oman)"],
-      ["ar-QA", "Arabisk (Qatar)"],
-      ["ar-SA", "Arabisk (Saudi-Arabia)"],
-      ["ar-PS", "Arabisk (Staten Palestina)"],
-      ["ar-TN", "Arabisk (Tunisia)"],
-      ["hy-AM", "Armensk"],
-      ["az-AZ", "Aserbajdsjansk"],
-      ["eu-ES", "Baskisk"],
-      ["bn-IN", "Bengalsk (India)"],
-      ["bn-BD", "Bengalsk (Bangladesh)"],
-      ["bg-BG", "Bulgarsk"],
-      ["da-DK", "Dansk"],
-      ["en-AU", "Engelsk (Australia)"],
-      ["en-CA", "Engelsk (Canada)"],
-      ["en-PH", "Engelsk (Filippinene)"],
-      ["en-GH", "Engelsk (Ghana)"],
-      ["en-IN", "Engelsk (India)"],
-      ["en-IE", "Engelsk (Ireland)"],
-      ["en-KE", "Engelsk (Kenya)"],
-      ["en-NZ", "Engelsk (New Zealand)"],
-      ["en-NG", "Engelsk (Nigeria)"],
-      ["en-GB", "Engelsk (Storbritannia)"],
-      ["en-ZA", "Engelsk (Sør-Afrika)"],
-      ["en-TZ", "Engelsk (Tanzania)"],
-      ["en-US", "Engelsk (USA)"],
-      ["fil-PH", "Filippinsk"],
-      ["fi-FI", "Finsk"],
-      ["fr-CA", "Fransk (Canada)"],
-      ["fr-FR", "Fransk (Frankrike)"],
-      ["gl-ES", "Galicisk"],
-      ["ka-GE", "Georgisk"],
-      ["el-GR", "Gresk"],
-      ["gu-IN", "Gujarati"],
-      ["he-IL", "Hebraisk"],
-      ["hi-IN", "Hindi"],
-      ["id-ID", "Indonesisk"],
-      ["is-IS", "Islandsk"],
-      ["it-IT", "Italiensk"],
-      ["ja-JP", "Japansk"],
-      ["jv-ID", "Javanesisk"],
-      ["kn-IN", "Kannada"],
-      ["ca-ES", "Katalansk"],
-      ["km-KH", "Khmer"],
-      ["yue-Hant-HK", "Kinesisk, kantonesisk (tradisjonell, Hong Kong)"],
-      ["cmn-Hans-HK", "Kinesisk, mandarin (forenklet, Hong Kong)"],
-      ["cmn-Hans-CN", "Kinesisk, mandarin (forenklet, Kina)"],
-      ["cmn-Hant-TW", "Kinesisk, mandarin (tradisjonell, Taiwan)"],
-      ["ko-KR", "Koreansk"],
-      ["hr-HR", "Kroatisk"],
-      ["lo-LA", "Lao"],
-      ["lv-LV", "Latvisk"],
-      ["lt-LT", "Litauisk"],
-      ["ms-MY", "Malay"],
-      ["ml-IN", "Malayalam"],
-      ["mr-IN", "Marathi"],
-      ["nl-NL", "Nederlandsk"],
-      ["ne-NP", "Nepalsk"],
-      ["nb-NO", "Norsk"],
-      ["fa-IR", "Persisk"],
-      ["pl-PL", "Polsk"],
-      ["pt-BR", "Portugisisk (Brasil)"],
-      ["pt-PT", "Portugisisk (Portugal)"],
-      ["ro-RO", "Rumensk"],
-      ["ru-RU", "Russisk"],
-      ["sr-RS", "Serbisk"],
-      ["si-LK", "Sinhala"],
-      ["sk-SK", "Slovakisk"],
-      ["sl-SI", "Slovensk"],
-      ["es-AR", "Spansk (Argentina)"],
-      ["es-BO", "Spansk (Bolivia)"],
-      ["es-CL", "Spansk (Chile)"],
-      ["es-CO", "Spansk (Colombia)"],
-      ["es-CR", "Spansk (Costa Rica)"],
-      ["es-DO", "Spansk (Den dominikanske republikk)"],
-      ["es-EC", "Spansk (Ecuador)"],
-      ["es-SV", "Spansk (El Salvador)"],
-      ["es-GT", "Spansk (Guatemala)"],
-      ["es-HN", "Spansk (Honduras)"],
-      ["es-MX", "Spansk (Mexico)"],
-      ["es-NI", "Spansk (Nicaragua)"],
-      ["es-PA", "Spansk (Panama)"],
-      ["es-PY", "Spansk (Paraguay)"],
-      ["es-PE", "Spansk (Peru)"],
-      ["es-PR", "Spansk (Puerto Rico)"],
-      ["es-ES", "Spansk (Spania)"],
-      ["es-UY", "Spansk (Uruguay)"],
-      ["es-US", "Spansk (USA)"],
-      ["es-VE", "Spansk (Venezuela)"],
-      ["su-ID", "Sundanesisk"],
-      ["sv-SE", "Svensk"],
-      ["sw-KE", "Swahili (Kenya)"],
-      ["sw-TZ", "Swahili (Tanzania)"],
-      ["ta-IN", "Tamil (India)"],
-      ["ta-MY", "Tamil (Malaysia)"],
-      ["ta-SG", "Tamil (Singapore)"],
-      ["ta-LK", "Tamil (Sri Lanka)"],
-      ["te-IN", "Telugu"],
-      ["th-TH", "Thai"],
-      ["cs-CZ", "Tsjekkia"],
-      ["tr-TR", "Tyrkisk"],
-      ["de-DE", "Tysk"],
-      ["uk-UA", "Ukrainsk"],
-      ["hu-HU", "Ungarsk"],
-      ["ur-IN", "Urdu (India)"],
-      ["ur-PK", "Urdu (Pakistan)"],
-      ["vi-VN", "Vietnamesisk"],
-      ["zu-ZA", "Zulu"],
-    ])
+            ["nb-NO", "Norwegian"],
+            ["sv-SE", "Swedish"],
+            ["da-DK", "Danish"],
+            ["en-GB", "English (UK)"],
+            ["en-US", "English (US)"],
+            ["", "---"],
+            ["af-ZA", "Afrikaans"],
+            ["am-ET", "Amharic"],
+            ["ar-DZ", "Arabic (Algeria)"],
+            ["ar-bra", "arabic (Bahrain)"],
+            ["ar-EC", "Arabic (Egypt)"],
+            ["ar-AE", "Arab (United Arab Emirates)"],
+            ["ar-IQ", "Arabic (Iraq)"],
+            ["ar-IL", "Arab (Israel)"],
+            ["ar-JO", "Arabic (Jordan)"],
+            ["ar-KW", "Arabic (Kuwait)"],
+            ["ar-LB", "Arabic (Lebanon)"],
+            ["ar-MA", "Arabic (Morocco)"],
+            ["ar-OM", "Arabic (Oman)"],
+            ["ar-QA", "Arabic (Qatar)"],
+            ["ar-SA", "Arab (Saudi Arabia)"],
+            ["ar-PS", "Arab (State of Palestine)"],
+            ["ar-TN", "Arabic (Tunisia)"],
+            ["hy-AM", "Armenian"],
+            ["az-AZ", "Azerbaijani"],
+            ["eu-ES", "Basque"],
+            ["bn-IN", "Bengali (India)"],
+            ["bn-BD", "Bengali (Bangladesh)"],
+            ["bg-BG", "Bulgarian"],
+            ["da-DK", "Danish"],
+            ["en-AU", "English (Australia)"],
+            ["en-CA", "English (Canada)"],
+            ["en-PH", "English (Philippines)"],
+            ["en-GH", "English (Ghana)"],
+            ["en-IN", "English (India)"],
+            ["en-IE", "English (Ireland)"],
+            ["en-KE", "English (Kenya)"],
+            ["en-NZ", "English (New Zealand)"],
+            ["en-NG", "English (Nigeria)"],
+            ["en-GB", "English (UK)"],
+            ["en-ZA", "English (South Africa)"],
+            ["en-TZ", "English (Tanzania)"],
+            ["en-US", "English (US)"],
+            ["file PH", "Filipino"],
+            ["fi-FI", "Finnish"],
+            ["fr-CA", "French (Canada)"],
+            ["fr-FR", "French (France)"],
+            ["gl-ES", "Galician"],
+            ["ka-GE", "Georgian"],
+            ["el-GR", "Greek"],
+            ["gu-IN", "Gujarati"],
+            ["he-IL", "Hebrew"],
+            ["hi-IN", "Hindi"],
+            ["ID ID", "Indonesian"],
+            ["is-IS", "Icelandic"],
+            ["IT-IT", "Italian"],
+            ["yes-JP", "Japanese"],
+            ["Jv ID", "Javanese"],
+            ["kn-IN", "Kannada"],
+            ["ca-ES", "Catalan"],
+            ["km-KH", "Khmer"],
+            ["yue-Hant-HK", "Chinese, Cantonese (Traditional, Hong Kong)"],
+            ["cmn-Hans-HK", "Chinese Mandarin (Simplified, Hong Kong)"],
+            ["cmn-Hans-CN", "Chinese Mandarin (Simplified, China)"],
+            ["cmn-Hant-TW", "Chinese Mandarin (Traditional, Taiwan)"],
+            ["ko-KR", "Korean"],
+            ["hr-HR", "Croatian"],
+            ["lo-LA", "Lao"],
+            ["lv-LV", "Latvian"],
+            ["LT-LT", "Lithuanian"],
+            ["ms-MY", "Malay"],
+            ["ml-IN", "Malayalam"],
+            ["mr-IN", "Marathi"],
+            ["nl-NL", "Dutch"],
+            ["ne-NP", "Nepali"],
+            ["nb-NO", "Norwegian"],
+            ["Fa-IR", "Persian"],
+            ["pl-PL", "Polish"],
+            ["pt-BR", "Portuguese (Brazil)"],
+            ["pt-PT", "Portuguese (Portugal)"],
+            ["ro-RO", "Romanian"],
+            ["ru-ru", "Russian"],
+            ["sr-RS", "Serbian"],
+            ["si-LK", "Sinhala"],
+            ["sk-SK", "Slovak"],
+            ["sl-SI", "Slovenian"],
+            ["es-AR", "Spanish (Argentina)"],
+            ["es-BO", "Spanish (Bolivia)"],
+            ["es-CL", "Spanish (Chile)"],
+            ["es-CO", "Spanish (Colombia)"],
+            ["es-CR", "Spanish (Costa Rica)"],
+            ["es-DO", "Spanish (Dominican Republic)"],
+            ["es-EC", "Spanish (Ecuador)"],
+            ["es-SV", "Spanish (El Salvador)"],
+            ["es-GT", "Spanish (Guatemala)"],
+            ["es-HN", "Spanish (Honduras)"],
+            ["es-MX", "Spanish (Mexico)"],
+            ["es-NI", "Spanish (Nicaragua)"],
+            ["es-PA", "Spanish (Panama)"],
+            ["es-PY", "Spanish (Paraguay)"],
+            ["es-PE", "Spanish (Peru)"],
+            ["es-PR", "Spanish (Puerto Rico)"],
+            ["es-ES", "Spanish (Spain)"],
+            ["es-UY", "Spanish (Uruguay)"],
+            ["es-US", "Spanish (US)"],
+            ["es-VE", "Spanish (Venezuela)"],
+            ["su-id", "Sundanese"],
+            ["sv-SE", "Swedish"],
+            ["sw-KE", "Swahili (Kenya)"],
+            ["sw-TZ", "Swahili (Tanzania)"],
+            ["ta-IN", "Tamil (India)"],
+            ["ta-MY", "Tamil (Malaysia)"],
+            ["ta-SG", "Tamil (Singapore)"],
+            ["ta-LK", "Tamil (Sri Lanka)"],
+            ["te-IN", "Telugu"],
+            ["th-TH", "Thai"],
+            ["cs-CZ", "Czech Republic"],
+            ["tr-TR", "Turkish"],
+            ["de-DE", "German"],
+            ["uk-UA", "Ukrainian"],
+            ["hu-HU", "Hungarian"],
+            ["Ur-IN", "Urdu (India)"],
+            ["Ur-PK", "Urdu (Pakistan)"],
+            ["vi-VN", "Vietnamese"],
+            ["to-ZA", "Zulu"],
+          ])
 
     return Array.from(languages).map(([key, value]) => (
       <option key={key} value={key}>

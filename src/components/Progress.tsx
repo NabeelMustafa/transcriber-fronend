@@ -47,7 +47,7 @@ class Progress extends React.Component<RouteComponentProps<{}> & IProps, any> {
             <svg width="20" height="20" focusable="false" aria-hidden="true">
               <use xlinkHref="#icon-garbage" />
             </svg>{" "}
-            Slett
+            Delete
           </button>
         </section>
 
@@ -59,7 +59,7 @@ class Progress extends React.Component<RouteComponentProps<{}> & IProps, any> {
                   <svg width="40" height="40" focusable="false" aria-hidden="true">
                     <use xlinkHref="#icon-x-c" color="red" />
                   </svg>{" "}
-                  <span className="org-text-l">Noe gikk galt!</span>
+                  <span className="org-text-l">Something went wrong!</span>
                 </div>
               )
             } else {
@@ -85,7 +85,7 @@ class Progress extends React.Component<RouteComponentProps<{}> & IProps, any> {
           })()}
 
           <label className="org-label">
-            Analyserer:
+          Analyzes:
             {(() => {
               if (progress === ProgressType.Analysing) {
                 if (transcript.status.error) {
@@ -106,7 +106,7 @@ class Progress extends React.Component<RouteComponentProps<{}> & IProps, any> {
           </label>
 
           <label className="org-label">
-            Transkribering:
+          Transcriber:
             {(() => {
               if (progress === ProgressType.Transcribing) {
                 if (transcript.status.error) {
@@ -123,7 +123,7 @@ class Progress extends React.Component<RouteComponentProps<{}> & IProps, any> {
           </label>
 
           <label className="org-label">
-            Lagring:
+          Storage:
             {(() => {
               if (progress === ProgressType.Saving) {
                 if (transcript.status.error) {

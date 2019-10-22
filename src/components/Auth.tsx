@@ -25,12 +25,12 @@ class Auth extends Component<RouteComponentProps<{}> & IStateProps, any> {
               <>
                 {displayName}
                 <button className="org-btn" onClick={this.logout}>
-                  Logg ut
+                  Logout
                 </button>
               </>
             )
           } else {
-            return <a href="/login">Logg inn</a>
+            return <a href="/login">Login</a>
           }
         })()}
       </div>

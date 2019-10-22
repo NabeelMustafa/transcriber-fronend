@@ -23,7 +23,7 @@ test("renders correctly", () => {
 
 test("submit button is disabled", () => {
   const { getByText } = render(<CreateTranscript />)
-  const submitButton = getByText("Last opp") as HTMLButtonElement
+  const submitButton = getByText("Upload") as HTMLButtonElement
 
   expect(submitButton.disabled).toBe(true)
 })
@@ -50,7 +50,7 @@ test("dropping files that are not audio will display error", async () => {
 
   fireEvent.drop(dropzone)
 
-  const submitButton = getByText("Last opp") as HTMLButtonElement
+  const submitButton = getByText("Upload") as HTMLButtonElement
   await wait(() => {
     expect(dropzone.textContent).toBe("Filen har feil format")
     expect(submitButton.disabled).toEqual(true)
@@ -61,7 +61,7 @@ test("dropping files on dropzone should show file name and enable upload button"
   const { getByText } = render(<CreateTranscript />)
 
   const dropzone = getByText("Klikk for å velge, eller slipp lydfil her")
-  const submitButton = getByText("Last opp") as HTMLButtonElement
+  const submitButton = getByText("Upload") as HTMLButtonElement
 
   const file = new File(["Content"], "audio.mp3", { type: "audio/mp3" })
   Object.defineProperty(dropzone, "files", { value: [file] })

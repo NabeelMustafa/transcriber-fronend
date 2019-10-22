@@ -44,7 +44,7 @@ class App extends React.Component<IStateProps, IState> {
                 </g>
               </svg>
               <h1 className="org-text-l logo">
-                <Link to="/"> Transkribering {process.env.NODE_ENV === "development" ? "(utvikling)" : ""}</Link>
+                <Link to="/"> Transcriber {process.env.NODE_ENV === "development" ? "(development)" : ""}</Link>
               </h1>
 
               <Auth />

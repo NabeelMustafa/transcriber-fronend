@@ -29,16 +29,16 @@ class TranscriptsList extends Component<IProps> {
     return (
       <div className="trans-list org-color-shade org-shadow-l org-color-base">
         <div className="org-bar">
-          <h2 className="org-text-l">Transkripsjoner</h2>
+          <h2 className="org-text-l">Transcripts</h2>
         </div>
         <hr />
         <table className="org-table">
           <thead>
             <tr>
               <th className="icon" />
-              <th className="name">Navn</th>
-              <th className="date">Dato</th>
-              <th>Varighet</th>
+              <th className="name">Name</th>
+              <th className="date">Date</th>
+              <th>Duration</th>
             </tr>
           </thead>
           <tbody>
@@ -48,9 +48,9 @@ class TranscriptsList extends Component<IProps> {
 
                 if (transcript.createdAt !== null) {
                   const date = (transcript.createdAt as firebase.firestore.Timestamp).toDate()
-
+                  console.log(date);
                   createdAt = moment(date)
-                    .locale("nb")
+                    .locale("en")
                     .calendar()
                 } else {
                   createdAt = ""

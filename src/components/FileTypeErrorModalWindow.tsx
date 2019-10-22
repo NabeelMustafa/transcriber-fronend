@@ -26,8 +26,8 @@ class FileTypeErrorModalWindow extends React.Component<IProps, any> {
       <Portal>
         <div className="modal_overlay">
           <div className="modal_container">
-            <div className="modal_header">En feil har oppstått</div>
-            <div className="modal_content">Filtypen støttes ikke</div>
+            <div className="modal_header">An error has occured</div>
+            <div className="modal_content">The file type is not supported</div>
             <div className="modal_action-footer">
               <button onClick={hideErrorMessage} className="org-btn org-btn--primary">
                 Ok
